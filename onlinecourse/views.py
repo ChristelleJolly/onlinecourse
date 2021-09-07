@@ -149,7 +149,7 @@ def show_exam_result(request, course_id, submission_id):
     total_grade = 0
     for choice in submission.choices.all():
         selected_ids.append(choice.id)
-        total_grade = choice.question.grade
+        total_grade += choice.question.grade
         if choice.is_correct:
             grade += choice.question.grade
     
